@@ -46,7 +46,7 @@ class ElementMenu extends BaseElement
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName(['Orientation', 'Alignment']);
+        $fields->removeByName(['Orientation', 'Alignment', 'Links']);
 
         $fields->addFieldToTab(
             'Root.Main',
