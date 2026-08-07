@@ -11,9 +11,10 @@
         "foundation"
     ],
     "require": {
-        "silverstripe/framework": "^5 || ^6",
-        "dnadesign/silverstripe-elemental": "^5 || ^6",
-        "silverstripe/linkfield": "^4"
+        "php": "^8.3",
+        "silverstripe/framework": "^6.0",
+        "dnadesign/silverstripe-elemental": "^6.0",
+        "silverstripe/linkfield": "^5.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
