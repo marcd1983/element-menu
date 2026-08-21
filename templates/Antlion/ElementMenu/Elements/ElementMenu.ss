@@ -1,3 +1,4 @@
+<% cached $ID, $LastEdited, $Links.Count, $Links.Max('LastEdited') %>
 <% if $Title && $ShowTitle %>
     <% with $HeadingTag %>
         <{$Me} class="element-title">$Up.Title.XML</{$Me}>
@@ -11,3 +12,4 @@
     <% end_loop %>
 </ul>
 <% end_if %>
+<% end_cached %>
