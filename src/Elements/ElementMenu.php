@@ -22,7 +22,7 @@ class ElementMenu extends BaseElement
     private static string $icon = 'font-icon-menu';
 
     private static array $db = [
-        'Orientation' => "Enum('horizontal,vertical','horizontal')",
+        'Orientation' => "Enum('horizontal,vertical,accordion','horizontal')",
         'Alignment'   => "Enum('align-left,align-center,align-right,align-spaced','align-left')",
     ];
 
@@ -60,7 +60,8 @@ class ElementMenu extends BaseElement
                 DropdownField::create('Orientation', 'Orientation', [
                     'horizontal' => 'Horizontal',
                     'vertical'   => 'Vertical',
-                ]),
+                    'accordion'  => 'Accordion (collapsible)',
+                ])->setDescription('Accordion uses the menu title as a toggle for a nested, collapsible list of items.'),
                 DropdownField::create('Alignment', 'Item alignment', [
                     'align-left'   => 'Left',
                     'align-center' => 'Center',
@@ -75,6 +76,12 @@ class ElementMenu extends BaseElement
 
     public function MenuClasses(): string
     {
+        // A Foundation accordion menu is a vertical menu with the
+        // data-accordion-menu behaviour; alignment does not apply.
+        if ($this->Orientation === 'accordion') {
+            return 'vertical';
+        }
+
         return trim(implode(' ', [
             $this->Orientation ?: 'horizontal',
             $this->Alignment   ?: 'align-left',
