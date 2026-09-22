@@ -1,0 +1,10 @@
+en:
+  Antlion\ElementMenu\Elements\ElementMenu:
+    PLURALNAME: Menus
+    PLURALS:
+      one: 'A Menu'
+      other: '{count} Menus'
+    SINGULARNAME: Menu
+    db_Alignment: Alignment
+    db_Orientation: Orientation
+    has_many_Links: Links
